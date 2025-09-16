@@ -1,0 +1,6 @@
+@use '_theme-light' as light;
+@use 'common';
+
+.bg-secondary {
+  background-color: light.$color-primary;
+}
