@@ -1,0 +1,22 @@
+/**
+* 公共样式
+* 不需要随主题更换
+**/ 
+@use '_theme-light-variables' as light;
+// @use '_theme-dark' as dark;
+@use '_variables' as vars;
+
+body {
+  background-color: light.$color-bg;
+  color: light.$color-text;
+  font-family: vars.$font-family;
+}
+
+.btn-primary {
+  background-color: light.$color-primary;
+  color: white;
+  border: 1px solid light.$color-border;
+  border-radius: vars.$border-radius;
+  padding: 10px 20px;
+}
+
