@@ -1,6 +1,10 @@
-@use '_theme-dark' as dark;     // 导入深色主题变量
+@use '_theme-dark-variables' as dark;     // 导入深色主题变量
 @use 'common';
 
 .bg-secondary {
   background-color: dark.$color-primary;
+}
+
+.color-text-style {
+  color: dark.$color-text;
 }

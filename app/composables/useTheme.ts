@@ -2,9 +2,10 @@ import { useHead } from "#imports";
 
 // 静态导入所有主题 CSS，让构建工具处理路径和 hash
 const themeImports = {
-  "theme-dark": () => import("@/assets/styles/theme-dark.scss"),
-
-  "theme-light": () => import("@/assets/styles/theme-light.scss"),
+  // "theme-dark": () => import("@/assets/styles/theme-dark.scss"),
+ "theme-dark": '',
+  // "theme-light": () => import("@/assets/styles/theme-light.scss"),
+  "theme-light": '',
 };
 
 const useTheme = () => {
@@ -20,16 +21,16 @@ const useTheme = () => {
       currentTheme.value = themeName;
       localStorage.setItem("theme", themeName);
       // 重新设置
-      useHead({
+       useHead({
         link: [
           {
             rel: "stylesheet",
-            href: `/assets/styles/${themeName}.scss`,
+            href: `/_nuxt/assets/styles/${themeName}.scss`,
             key: "theme-style", // 用 key 确保替换
             // 但 href 必须是静态字符串才能被构建工具正确处理
           },
         ],
-      });
+      }); 
     } catch (error) {
       console.error("加载主题失败:", error);
     }
