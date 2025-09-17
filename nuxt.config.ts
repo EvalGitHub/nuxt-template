@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
+  // 引入 Element Plus 模块， 根据需求自己替换
   modules: ["@element-plus/nuxt"],
   css: [
     // 引入所有主题文件，Vite 会为每个生成独立的 CSS 文件
