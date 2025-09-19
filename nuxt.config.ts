@@ -14,8 +14,9 @@ export default defineNuxtConfig({
   ],
   // color-mode配置
   colorMode: {
-    preference: 'system', // 遵循系统主题设置
+    preference: 'light', // 默认主题
     fallback: 'light', // 备用主题
-    classSuffix: '' // 类名后缀，空字符串表示不添加后缀
+    classSuffix: '', // 类名后缀，空字符串表示不添加后缀
+    storageKey: 'theme' // 使用自定义的存储键名
   }
 });
