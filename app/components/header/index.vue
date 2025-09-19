@@ -25,7 +25,7 @@
 </style>
 <script lang="ts" setup>
 
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import useTheme from '@/composables/useTheme'
 
 const options: { value: 'theme-light' | 'theme-dark'; label: string }[] = [
@@ -39,14 +39,16 @@ const options: { value: 'theme-light' | 'theme-dark'; label: string }[] = [
   },
 ]
 
-const value = ref('theme-light')
+const { currentTheme, setTheme } = useTheme()
+const value = ref(currentTheme.value)
 
-const { setTheme } = useTheme()
+// 监听主题变化，同步更新select的值
+watch(currentTheme, (newTheme) => {
+  value.value = newTheme
+})
 
-
-function changeTheme(value: 'theme-light' | 'theme-dark') {
-  console.log('changeTheme', value)
-  setTheme(value)
+function changeTheme(theme: 'theme-light' | 'theme-dark') {
+  console.log('changeTheme', theme)
+  setTheme(theme)
 }
-
 </script>

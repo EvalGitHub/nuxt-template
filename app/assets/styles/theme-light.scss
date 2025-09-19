@@ -1,10 +1,19 @@
 @use '_theme-light-variables' as light;
 @use 'common';
 
-.bg-secondary {
-  background-color: light.$color-primary;
-}
+.theme-light {
+  --color-bg: #{light.$color-bg};
+  --color-text: #{light.$color-text};
+  --color-primary: #{light.$color-primary};
+  --color-border: #{light.$color-border};
+  --font-family: #{light.$font-family};
+  --border-radius: #{light.$border-radius};
 
-.color-text-style {
-  color: light.$color-text;
+  .bg-secondary {
+    background-color: light.$color-primary;
+  }
+
+  .color-text-style {
+    color: light.$color-text;
+  }
 }
