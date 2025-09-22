@@ -1,7 +1,9 @@
-@use '_variables'; // 可选：导入基础变量
+@use '_variables' as variables; // 可选：导入基础变量
 
 // 主题特定变量
 $color-primary: #81abd7;
 $color-text: #e63a3a;
 $color-bg: #fff;
 $color-border: #ddd;
+$font-family: variables.$font-family;
+$border-radius: variables.$border-radius;

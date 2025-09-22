@@ -25,10 +25,10 @@
 </style>
 <script lang="ts" setup>
 
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import useTheme from '@/composables/useTheme'
 
-const options: { value: 'theme-light' | 'theme-dark'; label: string }[] = [
+const options = [
   {
     value: 'theme-light',
     label: '明亮主题',
@@ -39,14 +39,18 @@ const options: { value: 'theme-light' | 'theme-dark'; label: string }[] = [
   },
 ]
 
-const value = ref('theme-light')
+const { currentTheme, setTheme } = useTheme()
+const value = ref(currentTheme.preference)
 
-const { setTheme } = useTheme()
+// 监听主题变化，同步更新select的值
+watch(
+  () => currentTheme.preference,
+  (newMode) => {
+    value.value = newMode
+  }
+)
 
-
-function changeTheme(value: 'theme-light' | 'theme-dark') {
-  console.log('changeTheme', value)
-  setTheme(value)
+function changeTheme(theme: string) {
+  setTheme(theme)
 }
-
 </script>

@@ -3,10 +3,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
+    "build": "\t#打包 \n \t nuxt build ",
+    "predev": "rm -rf .output && npm run build",
+    "dev": "\t#启动 \n \t nuxt dev",
+    "postdev": "echo '开发环境启动成功'",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "preview": "#ssr \n npm run build && nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {

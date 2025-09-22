@@ -1,10 +1,18 @@
-@use '_theme-dark-variables' as dark;     // 导入深色主题变量
-@use 'common';
+@use '_theme-dark-variables' as dark;
 
-.bg-secondary {
-  background-color: dark.$color-primary;
-}
+.theme-dark {
+  --color-bg: #{dark.$color-bg};
+  --color-text: #{dark.$color-text};
+  --color-primary: #{dark.$color-primary};
+  --color-border: #{dark.$color-border};
+  --font-family: #{dark.$font-family};
+  --border-radius: #{dark.$border-radius};
+  
+  .bg-secondary {
+    background-color: dark.$color-primary;
+  }
 
-.color-text-style {
-  color: dark.$color-text;
+  .color-text-style {
+    color: dark.$color-text;
+  }
 }
